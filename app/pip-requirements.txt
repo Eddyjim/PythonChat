@@ -1,2 +1,4 @@
 # Requirements
 django
+channel
+pytest
