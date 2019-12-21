@@ -3,3 +3,4 @@ django
 channel
 channels_redis
 pytest
+django-registration
