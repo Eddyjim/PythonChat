@@ -1,4 +1,5 @@
 # Requirements
 django
 channel
+channels_redis
 pytest
