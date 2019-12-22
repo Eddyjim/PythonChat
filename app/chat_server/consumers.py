@@ -6,6 +6,8 @@ Consumers for chat_server application
 from channels.generic.websocket import AsyncWebsocketConsumer
 import json
 
+from chat_server.utils.stockbot_client import request_stock_value
+
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -17,6 +19,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
             self.room_group_name,
             self.channel_name
         )
+
+        await
 
         await self.accept()
 
@@ -52,3 +56,12 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'author': author,
             'message': message
         }))
+
+
+class ChatBotConsumer(ChatConsumer):
+    async def receive(self, text_data):
+        text_data_json = json.loads(text_data)
+        author = text_data_json['author']
+        message: str = text_data_json['message']
+        if message.startswith('/stock='):
+            request_stock_value(message.split('=')[1])

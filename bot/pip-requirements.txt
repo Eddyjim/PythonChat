@@ -1,0 +1,5 @@
+# Requirements
+falcon
+gunicorn
+requests
+websockets
