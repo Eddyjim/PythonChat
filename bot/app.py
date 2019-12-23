@@ -6,7 +6,7 @@ from message_handlers.chat_handler import ChatMessageHandler
 from middlewares import (
     ContentEncodingMiddleware,
 )
-from resourses import market_data
+from resources import market_data
 
 
 class BotAPI(falcon.API):

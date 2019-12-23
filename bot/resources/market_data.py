@@ -1,10 +1,10 @@
 """
-
+resources.market_data
 """
 
 import falcon
 
-from bot.resourses import BaseResource
+from resources import BaseResource
 
 BOT_NAME = 'stockbot'
 
@@ -33,8 +33,8 @@ class MarketDataResource(BaseResource):
             message = f'No values where found for {values["symbol"]}'
 
         event = {
-            'Author': BOT_NAME,
-            'Room': req.params['room'],
-            'Message': message
+            'author': BOT_NAME,
+            'room': req.params['room'],
+            'message': message
         }
         self.message_handler.send_message(event)

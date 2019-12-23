@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'chat_server',
+    'chat_server.apps.ChatServerConfig',
     'channels',
     'django_registration',
     'django.contrib.admin',
@@ -81,7 +81,7 @@ DATABASES = {
         'USER': 'chat',
         'PASSWORD': 'chat_server',
         'HOST': 'localhost',
-        'PORT': '5433'
+        'PORT': '5432'
     }
 }
 
@@ -137,4 +137,6 @@ LOGOUT_REDIRECT_URL = 'home'
 REGISTRATION_OPEN = True
 
 
-STOCK_BOT_HOST = 'localhost'
+STOCK_BOT_HOST = 'http://localhost:9000'
+RABBITMQ_HOST = 'localhost'
+MARKET_DATA_QUEUE_NAME = 'python_chat'
