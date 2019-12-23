@@ -3,6 +3,10 @@ networks:
    python_chat:
      external: true
 services:
+  bot:
+    build: ./bot
+    ports:
+      - "9000:8000"
   rabbitmq:
     image: "rabbitmq:3-management"
     ports:
@@ -21,7 +25,7 @@ services:
     image: postgres
 #    restart: always
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_DB: chat_server
       POSTGRES_USER: chat

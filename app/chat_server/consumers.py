@@ -20,8 +20,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
             self.channel_name
         )
 
-        await
-
         await self.accept()
 
     async def disconnect(self, close_code):
