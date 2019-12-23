@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'chat_server',
+    'chat_server.apps.ChatServerConfig',
     'channels',
     'django_registration',
     'django.contrib.admin',
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'chat.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../../db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'chat_server',
+        'USER': 'chat',
+        'PASSWORD': 'chat_server',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -131,3 +135,8 @@ CHANNEL_LAYERS = {
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 REGISTRATION_OPEN = True
+
+
+STOCK_BOT_HOST = 'http://localhost:9000'
+RABBITMQ_HOST = 'localhost'
+MARKET_DATA_QUEUE_NAME = 'python_chat'

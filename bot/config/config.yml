@@ -1,0 +1,12 @@
+---
+  broker:
+    host: https://stooq.com/q/l/
+  gunicorn:
+    bind: 0.0.0.0:8000
+    workers: 1
+    worker_connections : 1000
+    timeout : 30
+  channel:
+    host: localhost
+    port: 5672
+    queue_name: python_chat

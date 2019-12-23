@@ -1,0 +1,2 @@
+class ChatBotRequestException(Exception):
+    pass
