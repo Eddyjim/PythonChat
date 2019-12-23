@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<form class="pure-form pure-form-stacked" method="post" action="../registration">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input class="pure-button pure-button-primary" type="submit" value="{% trans 'Submit' %}" />
+</form>
+{% endblock %}

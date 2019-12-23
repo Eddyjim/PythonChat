@@ -1,0 +1,8 @@
+# Requirements
+falcon
+gunicorn
+requests
+websockets
+pyyaml
+aumbry
+pika

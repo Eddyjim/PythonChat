@@ -3,3 +3,6 @@ django
 channel
 channels_redis
 pytest
+django-registration
+psycopg2
+websocket_client
