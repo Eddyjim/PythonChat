@@ -27,22 +27,22 @@ services:
       POSTGRES_PASSWORD: chat_server
     networks:
       - python_chat
-  python_chat:
-    build:
-      context: .
-      dockerfile: ./docker/chat_server/Dockerfile
-    command: python manage.py runserver 0.0.0.0:8000
-    ports:
-      - "8000:8000"
-      - "2222:22"
-    networks:
-      - python_chat
-  bot:
-    build:
-      context: .
-      dockerfile: ./docker/bot/Dockerfile
-    command: python /app/start_bot.py
-    ports:
-      - "9000:8000"
-    networks:
-      - python_chat
+#  python_chat:
+#    build:
+#      context: .
+#      dockerfile: ./docker/chat_server/Dockerfile
+#    command: python manage.py runserver 0.0.0.0:8000
+#    ports:
+#      - "8000:8000"
+#      - "2222:22"
+#    networks:
+#      - python_chat
+#  bot:
+#    build:
+#      context: .
+#      dockerfile: ./docker/bot/Dockerfile
+#    command: python /app/start_bot.py
+#    ports:
+#      - "9000:8000"
+#    networks:
+#      - python_chat
