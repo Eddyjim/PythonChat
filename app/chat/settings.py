@@ -81,7 +81,7 @@ DATABASES = {
         'USER': 'chat',
         'PASSWORD': 'chat_server',
         'HOST': 'localhost',
-        'PORT': '5432'
+        'PORT': '5433'
     }
 }
 

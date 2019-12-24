@@ -1,0 +1,2 @@
+def requests():
+    return None
