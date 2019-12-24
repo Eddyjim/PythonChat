@@ -1,8 +1,7 @@
+import csv
 from http import HTTPStatus
 
-import falcon
 from requests import request
-import csv
 
 
 class BrokerClient:

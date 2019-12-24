@@ -1,0 +1,12 @@
+version: '3'
+networks:
+   python_chat:
+     external: true
+services:
+  python_chat:
+    build:
+      context: .
+      dockerfile: ./docker/chat_server/Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"

@@ -1,0 +1,12 @@
+version: '3'
+networks:
+   python_chat:
+     external: true
+services:
+  bot:
+    build:
+      context: docker
+      dockerfile: ./docker/bot/Dockerfile
+    command: python /app/start_bot.py
+    ports:
+      - "9000:8000"
