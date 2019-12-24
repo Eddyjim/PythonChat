@@ -4,7 +4,11 @@ resources.market_data
 
 import falcon
 
+<<<<<<< Updated upstream:bot/resources/market_data.py
 from resources import BaseResource
+=======
+from bot.dresourses import BaseResource
+>>>>>>> Stashed changes:bot/resourses/market_data.py
 
 BOT_NAME = 'stockbot'
 
